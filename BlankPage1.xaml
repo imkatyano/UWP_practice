@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="juice.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:juice"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="GameGrid" Background="#FDCACACA" Height="1000">
+        <TextBlock x:Name="GameTextBlock" TextWrapping="Wrap" Text="There is a little Bakery in one cozy Moscow backyard." FontSize="90" FontFamily="Chiller" Margin="49,49,358,720" Foreground="#FF5B1C4B" FontStyle="Italic"/>
+        <TextBlock x:Name="GameTextBlock2" TextWrapping="Wrap" Text="There was no clients yet, and no one knew what there were the most tasty buns in the city." FontSize="90" FontFamily="Chiller" Margin="49,286,136,495" Foreground="#FF5B1C4B" FontStyle="Italic"/>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="/bun.png" Width="800" Height="629" Margin="0,466,0,0"/>
+
+    </Grid>
+</Page>

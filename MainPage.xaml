@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="juice.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:juice"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="MyApp" Background="#FF151515">
+        <Button x:Name="BigButton" Content="tap here" Height="180" VerticalAlignment="Center" Width="555" Background="#FDCACACA" FontSize="140" Foreground="#FF2B2B2B" Click="BigButton_Click" FontFamily="Chiller" HorizontalAlignment="Center" Margin="0,0,0,322" FontStyle="Normal">
+            <Button.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Dark">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="#FF2B2B2B"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FDCACACA"/>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="Light">
+                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="#FF2B2B2B"/>
+                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FDCACACA"/>
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </Button.Resources>
+        </Button>
+        <TextBlock x:Name="NewText" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="100" Foreground="#FFC8C8C8" FontFamily="Chiller" FontSize="80" TextAlignment="Center"/>
+        <TextBlock x:Name="NewText2" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="100" Foreground="#FFC8C8C8" FontFamily="Chiller" FontSize="80" TextAlignment="Center" Margin="0,200,0,0"/>
+        <TextBox x:Name="NewTextBox" GotFocus="NewTextBox_GotFocus" TextWrapping="Wrap" Text="put ur answer here" Background="#FFFFC5ED" VerticalAlignment="Top" HorizontalAlignment="Center" Width="440" Height="120" Margin="0,633,0,0" FontSize="72" FontFamily="Chiller" Foreground="#FF151515" Padding="20,10,6,6" Visibility="Collapsed"/>
+    </Grid>
+
+</Page>
