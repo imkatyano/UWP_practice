@@ -10,8 +10,10 @@
 
     <Grid x:Name="GameGrid" Background="#FDCACACA" Height="1000">
         <TextBlock x:Name="GameTextBlock" TextWrapping="Wrap" Text="There is a little Bakery in one cozy Moscow backyard." FontSize="90" FontFamily="Chiller" Margin="49,49,358,720" Foreground="#FF5B1C4B" FontStyle="Italic"/>
-        <TextBlock x:Name="GameTextBlock2" TextWrapping="Wrap" Text="There was no clients yet, and no one knew what there were the most tasty buns in the city." FontSize="90" FontFamily="Chiller" Margin="49,286,136,495" Foreground="#FF5B1C4B" FontStyle="Italic"/>
-        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="/bun.png" Width="800" Height="629" Margin="0,466,0,0"/>
+        <TextBlock x:Name="GameTextBlock2" TextWrapping="Wrap" Text="There were no clients yet, and no one knew what there were the most tasty buns in the city." FontSize="90" FontFamily="Chiller" Margin="49,286,136,495" Foreground="#FF5B1C4B" FontStyle="Italic"/>
+        <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="/bun.png" Width="800" Height="629" Margin="0,466,0,0" Opacity="0.9"/>
+        <TextBlock x:Name="GameTextBlockUnderBun" TextWrapping="Wrap" Text="tap on this bun" FontSize="60" FontFamily="Chiller" Margin="605,902,586,21" Foreground="#FF5B1C4B" FontStyle="Italic" VerticalAlignment="Center" HorizontalAlignment="Center" Opacity=".5"/>
+        <Button x:Name="ButtonOnBun" Content="Button" Margin="0,579,0,0" VerticalAlignment="Top" Height="308" Width="452" HorizontalAlignment="Center" Click="ButtonOnBun_Click" Opacity="0"/>
 
     </Grid>
 </Page>

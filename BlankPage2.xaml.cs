@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,16 +21,18 @@ namespace juice
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class BlankPage1 : Page
+    public sealed partial class BlankPage2 : Page
     {
-        public BlankPage1()
+        public BlankPage2()
         {
             this.InitializeComponent();
         }
 
-        private void ButtonOnBun_Click(object sender, RoutedEventArgs e)
+        private async void ButtonForAgreement_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(BlankPage2));
+            string popupMessage = "This is an important information. Please read it patiently. But if you will forget them, you can always come back to this page";
+            MessageDialog messageDialog = new MessageDialog(popupMessage,"Dialog Title");
+            await messageDialog.ShowAsync(); 
         }
     }
 }

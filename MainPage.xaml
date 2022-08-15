@@ -6,9 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded= "Page_Loaded"
+    >
 
-    <Grid x:Name="MyApp" Background="#FF151515">
+
+    <Grid x:Name="MyApp" Background="#FF151515" >
         <Button x:Name="BigButton" Content="tap here" Height="180" VerticalAlignment="Center" Width="555" Background="#FDCACACA" FontSize="140" Foreground="#FF2B2B2B" Click="BigButton_Click" FontFamily="Chiller" HorizontalAlignment="Center" Margin="0,0,0,322" FontStyle="Normal">
             <Button.Resources>
                 <ResourceDictionary>

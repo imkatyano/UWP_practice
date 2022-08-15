@@ -5,6 +5,7 @@ using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.Devices.Enumeration;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
@@ -22,6 +23,15 @@ namespace juice
         {
             this.InitializeComponent();
         }
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var x = sender as MainPage;
+            for (x.Opacity = 0; x.Opacity <= 1; x.Opacity += .025)
+            {
+                await Task.Delay(40);
+            }
+        }
+
 
         private async void BigButton_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +56,7 @@ namespace juice
             }
             else if (NewTextBox.Text == "yes" | NewTextBox.Text == "Yes" | NewTextBox.Text == "да" | NewTextBox.Text == "Да")
             {
-                Game();
+                Frame.Navigate(typeof(BlankPage1));
             }
 
             else if (NewTextBox.Text == "no" | NewTextBox.Text == "No" | NewTextBox.Text == "нет" | NewTextBox.Text == "Нет")
@@ -54,7 +64,6 @@ namespace juice
                 await Task.Delay(1500);
                 CoreApplication.Exit();
             }
-            CoreApplication.Exit();
 
 
         }
@@ -65,7 +74,7 @@ namespace juice
             tb.Text = string.Empty;
             tb.GotFocus -= NewTextBox_GotFocus;
         }
-        void Game() { int x = 1; x++; }
+
 
 
     }

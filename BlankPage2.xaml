@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="juice.BlankPage2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:juice"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="ChoiceGrid" Background="#FDCACACA" Height="1000">
+        <!--<TextBlock x:Name="TextBlockOnChoiceGrid" TextWrapping="Wrap" Text="The Owner of this Bakery wants to have a lot of clients, so he offers you sale: you will have 25% price off when your purchase is more than 1200 roubles. Also he will give you personal ClientCard and put you on the list of CardHolders of the Bakery in case of your purchase is more than 3000 without sale.  " SelectionChanged="TextBlock_SelectionChanged" FontSize="90" FontFamily="Chiller" FontStyle="Italic" Foreground="#FF5B1C4B" Margin="0,141,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396"/>-->
+        <Popup>
+            <Grid x:Name="popup"  Background="#FFE5E5E5"/>
+        </Popup>
+        <Button x:Name="ButtonForAgreement" Content="Button" Height="980" Width="1490" Click="ButtonForAgreement_Click"/>
+
+    </Grid>
+</Page>
