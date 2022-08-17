@@ -8,12 +8,12 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="ChoiceGrid" Background="#FDCACACA" Height="1000">
-        <!--<TextBlock x:Name="TextBlockOnChoiceGrid" TextWrapping="Wrap" Text="The Owner of this Bakery wants to have a lot of clients, so he offers you sale: you will have 25% price off when your purchase is more than 1200 roubles. Also he will give you personal ClientCard and put you on the list of CardHolders of the Bakery in case of your purchase is more than 3000 without sale.  " SelectionChanged="TextBlock_SelectionChanged" FontSize="90" FontFamily="Chiller" FontStyle="Italic" Foreground="#FF5B1C4B" Margin="0,141,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396"/>-->
+    <Grid x:Name="ChoiceGrid" Background="#FDCACACA" Margin="0,0,0,10">
+        <TextBlock x:Name="TextBlockOnChoiceGrid" TextWrapping="Wrap" Text="The Owner of this Bakery wants to have a lot of clients, so he offers you sale: you will have 25% price off when your purchase is more than 1200 roubles. Also he will give you personal ClientCard and put you on the list of CardHolders of the Bakery in case of your purchase is more than 3000 without sale." FontSize="90" FontFamily="Chiller" FontStyle="Italic" Foreground="#FF5B1C4B" Margin="0,141,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396"/>
         <Popup>
             <Grid x:Name="popup"  Background="#FFE5E5E5"/>
         </Popup>
-        <Button x:Name="ButtonForAgreement" Content="Button" Height="980" Width="1490" Click="ButtonForAgreement_Click"/>
+        <Button x:Name="ButtonForAgreement" Height="980" Width="1490" Click="ButtonForAgreement_Click" Opacity="0"/>
 
     </Grid>
 </Page>

@@ -6,6 +6,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.Devices.Enumeration;
+using Windows.UI.Popups;
+using System;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
@@ -16,9 +18,11 @@ namespace juice
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public string UserAnswer { get; private set; }
 
-        
-        
+        readonly List<string> positiveAnswer = new List<string>() { "yes", "Yes", "да", "Да" };
+        readonly List<string> negativeAnswer = new List<string>() { "no", "No", "нет", "Нет" };
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -44,7 +48,8 @@ namespace juice
             NewTextBox.Visibility = Visibility.Visible;
             await Task.Delay(5000);
 
-            if (NewTextBox.Text=="put ur answer here")
+            
+            /*if (NewTextBox.Text == "put ur answer here")
             {
                 NewText.Text = " ";
                 var bgcolor = Color.FromArgb((byte)255, (byte)255, (byte)0, (byte)0);
@@ -54,7 +59,7 @@ namespace juice
                 await Task.Delay(1500);
 
             }
-            else if (NewTextBox.Text == "yes" | NewTextBox.Text == "Yes" | NewTextBox.Text == "да" | NewTextBox.Text == "Да")
+            else if (NewTextBox.Text == "yes\\n" | NewTextBox.Text == "Yes" | NewTextBox.Text == "да" | NewTextBox.Text == "Да")
             {
                 Frame.Navigate(typeof(BlankPage1));
             }
@@ -64,7 +69,9 @@ namespace juice
                 await Task.Delay(1500);
                 CoreApplication.Exit();
             }
-
+            //else
+              //  NewText2.Text = "yes or no?";
+            */
 
         }
 
@@ -74,6 +81,47 @@ namespace juice
             tb.Text = string.Empty;
             tb.GotFocus -= NewTextBox_GotFocus;
         }
+
+        /*private async void NewTextBox_KeyUp(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter) 
+            {
+                await new MessageDialog("Workaet").ShowAsync(); 
+            }
+        }*/
+
+        private async void NewTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            await Task.Delay(5000);
+            UserAnswer = (sender as TextBox).Text;
+            
+            for (int i = 0; i < 4; i++)
+            {
+                if (UserAnswer== positiveAnswer[i])
+                    Frame.Navigate(typeof(BlankPage1)); // созд bool List contains если содержит то ок
+
+                else if (UserAnswer== negativeAnswer[i])
+                {
+                    await Task.Delay(1500);
+                    CoreApplication.Exit();
+                }
+
+                else
+                {
+                    NewText2.Text = "think faster!";
+                    //NewTextBox.Visibility = Visibility.Collapsed;
+                    await Task.Delay(1500);
+                }
+
+            }
+
+
+
+
+
+        }
+
+
 
 
 

@@ -30,7 +30,7 @@
         </Button>
         <TextBlock x:Name="NewText" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="100" Foreground="#FFC8C8C8" FontFamily="Chiller" FontSize="80" TextAlignment="Center"/>
         <TextBlock x:Name="NewText2" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="100" Foreground="#FFC8C8C8" FontFamily="Chiller" FontSize="80" TextAlignment="Center" Margin="0,200,0,0"/>
-        <TextBox x:Name="NewTextBox" GotFocus="NewTextBox_GotFocus" TextWrapping="Wrap" Text="put ur answer here" Background="#FFFFC5ED" VerticalAlignment="Top" HorizontalAlignment="Center" Width="440" Height="120" Margin="0,633,0,0" FontSize="72" FontFamily="Chiller" Foreground="#FF151515" Padding="20,10,6,6" Visibility="Collapsed"/>
+        <TextBox x:Name="NewTextBox" TextChanged="NewTextBox_TextChanged"  GotFocus="NewTextBox_GotFocus" TextWrapping="Wrap" Text="put ur answer here" Background="#FFFFC5ED" VerticalAlignment="Top" HorizontalAlignment="Center" Width="440" Height="120" Margin="0,675,0,0" FontSize="72" FontFamily="Chiller" Foreground="#FF151515" Padding="20,10,6,6" Visibility="Collapsed"/>
     </Grid>
 
 </Page>
