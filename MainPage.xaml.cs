@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Media;
 using Windows.Devices.Enumeration;
 using Windows.UI.Popups;
 using System;
+using Windows.Storage.Pickers;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
@@ -35,7 +36,6 @@ namespace juice
                 await Task.Delay(40);
             }
         }
-
 
         private async void BigButton_Click(object sender, RoutedEventArgs e)
         {

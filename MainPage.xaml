@@ -12,8 +12,8 @@
 
 
     <Grid x:Name="MyApp" Background="#FF151515" >
-        <Button x:Name="BigButton" Content="tap here" Height="180" VerticalAlignment="Center" Width="555" Background="#FDCACACA" FontSize="140" Foreground="#FF2B2B2B" Click="BigButton_Click" FontFamily="Chiller" HorizontalAlignment="Center" Margin="0,0,0,322" FontStyle="Normal">
-            <Button.Resources>
+        <Button x:Name="BigButton" Content="tap here" Height="180" VerticalAlignment="Center" Width="555" Background="#FDE3C7A5" FontSize="70" Foreground="#FF2B2B2B" Click="BigButton_Click" HorizontalAlignment="Center" Margin="0,0,0,322" FontStyle="Normal" FontFamily="Kristen ITC">
+            <!--<Button.Resources>
                 <ResourceDictionary>
                     <ResourceDictionary.ThemeDictionaries>
                         <ResourceDictionary x:Key="Dark">
@@ -26,11 +26,11 @@
                         </ResourceDictionary>
                     </ResourceDictionary.ThemeDictionaries>
                 </ResourceDictionary>
-            </Button.Resources>
+            </Button.Resources>-->
         </Button>
-        <TextBlock x:Name="NewText" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="100" Foreground="#FFC8C8C8" FontFamily="Chiller" FontSize="80" TextAlignment="Center"/>
-        <TextBlock x:Name="NewText2" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="600" Height="100" Foreground="#FFC8C8C8" FontFamily="Chiller" FontSize="80" TextAlignment="Center" Margin="0,200,0,0"/>
-        <TextBox x:Name="NewTextBox" TextChanged="NewTextBox_TextChanged"  GotFocus="NewTextBox_GotFocus" TextWrapping="Wrap" Text="put ur answer here" Background="#FFFFC5ED" VerticalAlignment="Top" HorizontalAlignment="Center" Width="440" Height="120" Margin="0,675,0,0" FontSize="72" FontFamily="Chiller" Foreground="#FF151515" Padding="20,10,6,6" Visibility="Collapsed"/>
+        <TextBlock x:Name="NewText" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="694" Height="100" Foreground="#FDE3C7A5" FontFamily="Kristen ITC" FontSize="50" TextAlignment="Center"/>
+        <TextBlock x:Name="NewText2" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="709" Height="100" Foreground="#FDE3C7A5" FontFamily="Kristen ITC" FontSize="50" TextAlignment="Center" Margin="0,550,0,0"/>
+        <TextBox x:Name="NewTextBox" TextChanged="NewTextBox_TextChanged"  GotFocus="NewTextBox_GotFocus" Text="put ur answer here" Background="#FDE3C7A5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="554" Height="120" FontSize="50" FontFamily="Kristen ITC" Foreground="#FF151515" Visibility="Collapsed" Margin="0,0,0,150" TextWrapping="Wrap" TextAlignment="Center" Padding="10,24,6,6"/>
     </Grid>
 
 </Page>

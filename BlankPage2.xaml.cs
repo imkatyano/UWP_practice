@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,6 +27,19 @@ namespace juice
             await messageDialog.ShowAsync();
 
             Frame.Navigate(typeof(BlankPage3));
+        }
+
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            //var x = TextBlockOnChoiceGrid3;
+            await Task.Delay(4000);
+            TextBlockOnChoiceGrid3.Opacity = 0;
+            TextBlockOnChoiceGrid3.Visibility = Visibility.Visible;
+
+            for (TextBlockOnChoiceGrid3.Opacity = 0; TextBlockOnChoiceGrid3.Opacity <= 1; TextBlockOnChoiceGrid3.Opacity += .025)
+            {
+                await Task.Delay(40);
+            }
         }
     }
 }
