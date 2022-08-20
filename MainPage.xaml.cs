@@ -22,7 +22,6 @@ namespace juice
         public string UserAnswer { get; private set; }
 
         readonly List<string> positiveAnswer = new List<string>() { "yes", "Yes", "да", "Да" };
-        readonly List<string> negativeAnswer = new List<string>() { "no", "No", "нет", "Нет" };
 
         public MainPage()
         {
@@ -44,86 +43,44 @@ namespace juice
             NewText.Text = "hi";
             await Task.Delay(800);
             NewText2.Text = "do u want to play?";
-            await Task.Delay(800);
-            NewTextBox.Visibility = Visibility.Visible;
-            await Task.Delay(5000);
-
-            
-            /*if (NewTextBox.Text == "put ur answer here")
-            {
-                NewText.Text = " ";
-                var bgcolor = Color.FromArgb((byte)255, (byte)255, (byte)0, (byte)0);
-                NewText2.Foreground = new SolidColorBrush(bgcolor);
-                NewText2.Text = "think faster!";
-                NewTextBox.Visibility = Visibility.Collapsed;
-                await Task.Delay(1500);
-
-            }
-            else if (NewTextBox.Text == "yes\\n" | NewTextBox.Text == "Yes" | NewTextBox.Text == "да" | NewTextBox.Text == "Да")
-            {
-                Frame.Navigate(typeof(BlankPage1));
-            }
-
-            else if (NewTextBox.Text == "no" | NewTextBox.Text == "No" | NewTextBox.Text == "нет" | NewTextBox.Text == "Нет")
-            {
-                await Task.Delay(1500);
-                CoreApplication.Exit();
-            }
-            //else
-              //  NewText2.Text = "yes or no?";
-            */
-
+            await Task.Delay(1500);
+            ButtonPositve.Visibility = Visibility.Visible;
+            ButtonNegative.Visibility = Visibility.Visible;
         }
 
-        private void NewTextBox_GotFocus(object sender, RoutedEventArgs e)
+        //private void NewTextBox_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    TextBox tb = (sender as TextBox);
+        //    tb.Text = string.Empty;
+        //    tb.GotFocus -= NewTextBox_GotFocus;
+        //}
+
+        private void ButtonPositve_Click(object sender, RoutedEventArgs e)
         {
-            TextBox tb = (sender as TextBox);
-            tb.Text = string.Empty;
-            tb.GotFocus -= NewTextBox_GotFocus;
+            Frame.Navigate(typeof(BlankPage1));
         }
 
-        /*private async void NewTextBox_KeyUp(object sender, Windows.UI.Xaml.Input.KeyRoutedEventArgs e)
+        private async void ButtonNegative_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Key == Windows.System.VirtualKey.Enter) 
-            {
-                await new MessageDialog("Workaet").ShowAsync(); 
-            }
-        }*/
-
-        private async void NewTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            await Task.Delay(5000);
-            UserAnswer = (sender as TextBox).Text;
-            
-            for (int i = 0; i < 4; i++)
-            {
-                if (UserAnswer== positiveAnswer[i])
-                    Frame.Navigate(typeof(BlankPage1)); // созд bool List contains если содержит то ок
-
-                else if (UserAnswer== negativeAnswer[i])
-                {
-                    await Task.Delay(1500);
-                    CoreApplication.Exit();
-                }
-
-                else
-                {
-                    NewText2.Text = "think faster!";
-                    //NewTextBox.Visibility = Visibility.Collapsed;
-                    await Task.Delay(1500);
-                }
-
-            }
-
-
-
-
-
+            await Task.Delay(500);
+            CoreApplication.Exit();
         }
 
+        /* private async void NewTextBox_TextChanged(object sender, TextChangedEventArgs e)
+         {
+             await Task.Delay(5000);
+             UserAnswer = (sender as TextBox).Text;
 
-
-
-
+             if (positiveAnswer.Contains(UserAnswer))
+             {
+                 Frame.Navigate(typeof(BlankPage1));
+             }
+             else
+             {
+                 await Task.Delay(1500);
+                 CoreApplication.Exit();
+             }
+         }
+        */
     }
 }

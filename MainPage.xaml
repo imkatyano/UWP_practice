@@ -30,7 +30,9 @@
         </Button>
         <TextBlock x:Name="NewText" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="694" Height="100" Foreground="#FDE3C7A5" FontFamily="Kristen ITC" FontSize="50" TextAlignment="Center"/>
         <TextBlock x:Name="NewText2" TextWrapping="Wrap" Text="" HorizontalAlignment="Center" VerticalAlignment="Top" Width="709" Height="100" Foreground="#FDE3C7A5" FontFamily="Kristen ITC" FontSize="50" TextAlignment="Center" Margin="0,550,0,0"/>
-        <TextBox x:Name="NewTextBox" TextChanged="NewTextBox_TextChanged"  GotFocus="NewTextBox_GotFocus" Text="put ur answer here" Background="#FDE3C7A5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="554" Height="120" FontSize="50" FontFamily="Kristen ITC" Foreground="#FF151515" Visibility="Collapsed" Margin="0,0,0,150" TextWrapping="Wrap" TextAlignment="Center" Padding="10,24,6,6"/>
+        <Button x:Name="ButtonPositve"  Content ="yes" Background="#FDE3C7A5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="169" Height="97" FontSize="50" FontFamily="Kristen ITC" Foreground="#FF151515" Visibility="Collapsed" Padding="10,14,6,6" Margin="450,0,0,180" Click="ButtonPositve_Click"/>
+        <Button x:Name="ButtonNegative" Content ="no" Background="#FDE3C7A5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="169" Height="97" FontSize="50" FontFamily="Kristen ITC" Foreground="#FF151515" Visibility="Collapsed" Padding="10,14,6,6" Margin="0,0,450,180" Click="ButtonNegative_Click"/>
+
     </Grid>
 
 </Page>
