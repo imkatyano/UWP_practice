@@ -1,14 +1,8 @@
-﻿using System.Threading.Tasks;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
-using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-using Windows.Devices.Enumeration;
-using Windows.UI.Popups;
-using System;
-using Windows.Storage.Pickers;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
@@ -43,7 +37,7 @@ namespace juice
             NewText.Text = "hi";
             await Task.Delay(800);
             NewText2.Text = "do u want to play?";
-            await Task.Delay(1500);
+            await Task.Delay(1000);
             ButtonPositve.Visibility = Visibility.Visible;
             ButtonNegative.Visibility = Visibility.Visible;
         }
@@ -65,6 +59,7 @@ namespace juice
             await Task.Delay(500);
             CoreApplication.Exit();
         }
+
 
         /* private async void NewTextBox_TextChanged(object sender, TextChangedEventArgs e)
          {

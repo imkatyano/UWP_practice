@@ -18,7 +18,7 @@ namespace juice
             this.InitializeComponent();
         }
 
-        private async void ButtonForAgreement_Click(object sender, RoutedEventArgs e)
+        /*private async void ButtonForAgreement_Click(object sender, RoutedEventArgs e)
         {
             string popupMessage = "Please, read it patiently. But if you will forget them, you can always come back to this page.";
             MessageDialog messageDialog = new MessageDialog(popupMessage);
@@ -27,19 +27,29 @@ namespace juice
             await messageDialog.ShowAsync();
 
             Frame.Navigate(typeof(BlankPage3));
-        }
+        }*/
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //var x = TextBlockOnChoiceGrid3;
-            await Task.Delay(4000);
-            TextBlockOnChoiceGrid3.Opacity = 0;
-            TextBlockOnChoiceGrid3.Visibility = Visibility.Visible;
+            await Task.Delay(3500);
+            TextBlockOnChoiceGrid4.Opacity = 0;
+            TextBlockOnChoiceGrid4.Visibility = Visibility.Visible;
 
-            for (TextBlockOnChoiceGrid3.Opacity = 0; TextBlockOnChoiceGrid3.Opacity <= 1; TextBlockOnChoiceGrid3.Opacity += .025)
+            for (TextBlockOnChoiceGrid4.Opacity = 0; TextBlockOnChoiceGrid4.Opacity <= 1; TextBlockOnChoiceGrid4.Opacity += .025)
             {
                 await Task.Delay(40);
             }
+        }
+
+        private async void FirstCellTapped(object sender, RoutedEventArgs e)
+        {
+            string popupMessage = "Please, read it patiently. But if you will forget them, you can always come back to this page.";
+            MessageDialog messageDialog = new MessageDialog(popupMessage);
+            messageDialog.Title = "Important Information";
+            messageDialog.Commands.Add(new UICommand("Okay, I understand", null));
+            await messageDialog.ShowAsync();
+
+            Frame.Navigate(typeof(BlankPage3));
         }
     }
 }

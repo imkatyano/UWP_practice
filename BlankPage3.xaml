@@ -8,8 +8,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid x:Name="PageWithPurchase" Background="#FDCACACA" Height="1000">
-        <TextBlock x:Name="QuestionTextBlock" TextWrapping="Wrap" Text="How much money do you have?" FontSize="90" FontFamily="Chiller" Margin="49,49,358,824" Foreground="#FF5B1C4B" FontStyle="Italic"/>
+    <Grid x:Name="PageWithPurchase" Background="#FF2B2B2B" Height="1000">
+        <TextBlock x:Name="QuestionTextBlock" TextWrapping="Wrap" Text="How much money do you have?" FontSize="90" FontFamily="Chiller" Margin="49,49,358,824" Foreground="#FDE3C7A5" FontStyle="Italic"/>
         <TextBox x:Name="ClientsMoney" TextWrapping="Wrap" Margin="981,49,182,847" Foreground="#FF5B1C4B" Background="#FFE5E3E4" FontFamily="Chiller" FontStyle="Italic" TextChanged="ClientsMoney_TextChanged" FontSize="90"/>
         <TextBlock x:Name="AnswerTextBlock" TextWrapping="Wrap" Text=" " FontSize="90" FontFamily="Chiller" Margin="204,186,203,687" Foreground="#FF5B1C4B" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Center" Width="1500" Visibility="Collapsed"/>
 
