@@ -30,6 +30,7 @@ namespace juice
         private void ButtonOnBun_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(BlankPage2));
+
         }
     }
 }

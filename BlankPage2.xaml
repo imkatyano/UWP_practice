@@ -23,6 +23,7 @@
         <TextBlock x:Name="TextBlockOnChoiceGrid4" TextAlignment ="Center" TextWrapping="Wrap" Text="If you've read to the end, tap on the screen." 
                    FontSize="48" FontFamily="Candara" Foreground="#FD8C7C68" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1396" FontWeight="Bold" FontStyle="Italic" Visibility="Collapsed" Margin="0,0,0,180"/>
 
+        <Button x:Name="GoBackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE830;" HorizontalAlignment="Right" Height="91" Width="91" VerticalAlignment="Bottom" FontSize="50" Foreground="#FFC6AD91" Click="GoBackButton_Click"  Margin="0,0,50,50"/>
 
 
     </Grid>

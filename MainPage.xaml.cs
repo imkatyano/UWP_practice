@@ -13,9 +13,6 @@ namespace juice
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public string UserAnswer { get; private set; }
-
-        readonly List<string> positiveAnswer = new List<string>() { "yes", "Yes", "да", "Да" };
 
         public MainPage()
         {

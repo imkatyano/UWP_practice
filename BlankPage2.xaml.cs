@@ -18,17 +18,6 @@ namespace juice
             this.InitializeComponent();
         }
 
-        /*private async void ButtonForAgreement_Click(object sender, RoutedEventArgs e)
-        {
-            string popupMessage = "Please, read it patiently. But if you will forget them, you can always come back to this page.";
-            MessageDialog messageDialog = new MessageDialog(popupMessage);
-            messageDialog.Title = "Important Information";
-            messageDialog.Commands.Add(new UICommand("Okay, I understand", null));
-            await messageDialog.ShowAsync();
-
-            Frame.Navigate(typeof(BlankPage3));
-        }*/
-
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             await Task.Delay(3500);
@@ -50,6 +39,11 @@ namespace juice
             await messageDialog.ShowAsync();
 
             Frame.Navigate(typeof(BlankPage3));
+        }
+
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BlankPage3));    //если заполнены определенные поля, то опр. страница. если не заполнены - значит юзер до них еще не доходил
         }
     }
 }

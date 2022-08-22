@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -29,43 +30,84 @@ namespace juice
             this.InitializeComponent();
         }
 
-        private async void ClientsMoney_TextChanged(object sender, TextChangedEventArgs e)
+        int clientsMoneyInt; 
+
+
+        // создана переменная
+        // произведена попытка конвертировать пр нажатии на ОК, в случае успеха - надпись внизу
+           // показывает введённые деньги
+
+        // кнопка "добавить деньги" > MoneyAfterUpdate.Text увелич. на 100
+ 
+
+
+    private async void OKButton_Click(object sender, RoutedEventArgs e)
         {
-            //int ClientsMoney = Convert.ToInt32(((TextBox)sender).Text);
             try
             {
-                int ClientsMoney = Convert.ToInt32(((TextBox)sender).Text);
-
-                if (ClientsMoney <= 0)
-                {
-                    MessageDialog messageDialog = new MessageDialog($"Please, add some money, {ClientsMoney} is too little");
-                    messageDialog.Title = "Error";
-                    messageDialog.Commands.Add(new UICommand("Sorry", null));
-                    await messageDialog.ShowAsync();
-                }
+                clientsMoneyInt = Convert.ToInt32(ClientsMoney.Text);   // присвоение переменной введенного текста
+                MoneyAfterUpdate.Text = clientsMoneyInt.ToString();     // присвоение полю вывода введённого текста в формате стринг 
             }
-            catch (FormatException ex)
+            
+            catch (Exception NullException) when (MoneyAfterUpdate.Text == "0")
+            //catch (Exception NullException) when (clientsMoneyInt == 0)
             {
-                MessageDialog messageDialog = new MessageDialog(ex.Message);
+                MessageDialog messageDialog = new MessageDialog(NullException.Message, $"Please, add some money, {clientsMoneyInt} is too little");
                 messageDialog.Title = "Error";
                 messageDialog.Commands.Add(new UICommand("Sorry", null));
                 await messageDialog.ShowAsync();
             }
-
+            catch (FormatException)
+            {
+                MessageDialog messageDialog = new MessageDialog("Incorrect format :( \nPlease, enter a number.");
+                messageDialog.Title = "Error";
+                messageDialog.Commands.Add(new UICommand("Sorry", null));
+                await messageDialog.ShowAsync();
+            }
             catch (Exception ex1)
             {
-                // вывести MessageDialog для рандомной ошибки
-
-            }
-
+                MessageDialog messageDialog = new MessageDialog(ex1.Message);
+                messageDialog.Title = "Error";
+                messageDialog.Commands.Add(new UICommand("Sorry", null));
+                await messageDialog.ShowAsync();
+            }                                        
         }
 
-        // AnswerTextBlock пока скрыт, появится при написании человеком кол-ва денег
 
+        private async void AddMoneyButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                clientsMoneyInt += 100;
+                MoneyAfterUpdate.Text = clientsMoneyInt.ToString();
+               //хз нужна ли clientsMoneyInt = Convert.ToInt32(MoneyAfterUpdate.Text);
+            }
+            catch (Exception MoneyAfterUpdateIsNull) when (MoneyAfterUpdate.Text == null)
 
+            {
+                MessageDialog messageDialog = new MessageDialog(MoneyAfterUpdateIsNull.Message, "\nСперва необходимо обновить текстовое поле с вашей суммой.");
+                messageDialog.Title = "Error";
+                messageDialog.Commands.Add(new UICommand("Sorry", null));
+                await messageDialog.ShowAsync();
+            }
+        }
 
-
-
-
+        private void GoToPageInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(BlankPage2));
+        }
     }
 }
+
+
+
+
+
+
+
+
+        //             Frame.Navigate(typeof(BlankPage2)); возможно сделать не воид, а чтобы передавалось какое-то число содержащее инфу о странице
+
+
+
+
