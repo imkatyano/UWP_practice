@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="juice.BlankPage4"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:juice"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button x:Name="GoToPageInfoButton" FontFamily="Segoe MDL2 Assets" Content="&#xE730;" HorizontalAlignment="Right" Height="71" Width="71" VerticalAlignment="Bottom" FontSize="50" Foreground="#FFC6AD91" Margin="0,0,50,50" Click="GoToPageInfoButton_Click"/>
+
+    </Grid>
+</Page>

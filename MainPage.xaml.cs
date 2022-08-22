@@ -11,13 +11,21 @@ namespace juice
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
+    /// 
+
     public sealed partial class MainPage : Page
     {
+
+
+
+        static public Queue<int> PageNavigationQueue;
 
         public MainPage()
         {
             this.InitializeComponent();
+            PageNavigationQueue = new Queue<int>();
         }
+
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             var x = sender as MainPage;

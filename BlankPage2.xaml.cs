@@ -30,20 +30,46 @@ namespace juice
             }
         }
 
-        private async void FirstCellTapped(object sender, RoutedEventArgs e)
+        private async Task PopupMessage()
         {
             string popupMessage = "Please, read it patiently. But if you will forget them, you can always come back to this page.";
             MessageDialog messageDialog = new MessageDialog(popupMessage);
             messageDialog.Title = "Important Information";
             messageDialog.Commands.Add(new UICommand("Okay, I understand", null));
             await messageDialog.ShowAsync();
+        }
 
+        private async void FirstCellTapped(object sender, RoutedEventArgs e)
+        {
+            await PopupMessage();
             Frame.Navigate(typeof(BlankPage3));
         }
 
+        public async void PageNavigationMethod(int a)
+        {
+            switch (a)
+            {
+                case 3:
+                    await PopupMessage();
+                    Frame.Navigate(typeof(BlankPage3));
+                    break;
+                case 4:
+                    await PopupMessage();
+                    Frame.Navigate(typeof(BlankPage4));
+                    break;
+            }
+        }
+
+
+
+
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(BlankPage3));    //если заполнены определенные поля, то опр. страница. если не заполнены - значит юзер до них еще не доходил
+            try { PageNavigationMethod(MainPage.PageNavigationQueue.Dequeue()); }
+            catch (InvalidOperationException)
+            {
+
+            }
         }
     }
 }

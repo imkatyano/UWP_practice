@@ -14,16 +14,16 @@
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="Transparent"
                    Tapped="FirstCellTapped"/>
         <TextBlock x:Name="TextBlockOnChoiceGrid1" TextAlignment ="Center" TextWrapping="Wrap" Text="The Owner of this Bakery wants to have a lot of clients, so he offers you sale: you will have 25% price off when your purchase is more than 1200 roubles." 
-                   FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396" Margin="0,130,0,0" FontWeight="Bold"/>
+                   FontSize="38" FontFamily="Candara" Foreground="#FDE3C7A5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396" Margin="0,130,0,0" FontWeight="Bold"/>
         <TextBlock x:Name="TextBlockOnChoiceGrid2" TextAlignment ="Center" TextWrapping="Wrap" Text="Also he will give you personal ClientCard and put you on the list of CardHolders of the Bakery in case of your purchase is more than 3000 roubles without sale." 
-                   FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396" Margin="0,340,0,0" FontWeight="Bold"/>
+                   FontSize="38" FontFamily="Candara" Foreground="#FDE3C7A5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396" Margin="0,340,0,0" FontWeight="Bold"/>
         <TextBlock x:Name="TextBlockOnChoiceGrid3" TextAlignment ="Center" TextWrapping="Wrap" Text="The price of one bun — 200 roubles." 
-                   FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396" Margin="0,550,0,0" FontWeight="Bold"/>
+                   FontSize="38" FontFamily="Candara" Foreground="#FDE3C7A5" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1396" Margin="0,550,0,0" FontWeight="Bold"/>
 
         <TextBlock x:Name="TextBlockOnChoiceGrid4" TextAlignment ="Center" TextWrapping="Wrap" Text="If you've read to the end, tap on the screen." 
-                   FontSize="48" FontFamily="Candara" Foreground="#FD8C7C68" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1396" FontWeight="Bold" FontStyle="Italic" Visibility="Collapsed" Margin="0,0,0,180"/>
+                   FontSize="38" FontFamily="Candara" Foreground="#FD8C7C68" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1396" FontWeight="Bold" FontStyle="Italic" Visibility="Collapsed" Margin="0,0,0,180"/>
 
-        <Button x:Name="GoBackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE830;" HorizontalAlignment="Right" Height="91" Width="91" VerticalAlignment="Bottom" FontSize="50" Foreground="#FFC6AD91" Click="GoBackButton_Click"  Margin="0,0,50,50"/>
+        <Button x:Name="GoBackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE830;" HorizontalAlignment="Right" Height="71" Width="71" VerticalAlignment="Bottom" FontSize="40" Foreground="#FFC6AD91" Click="GoBackButton_Click"  Margin="0,0,50,50"/>
 
 
     </Grid>
