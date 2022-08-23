@@ -9,19 +9,49 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid x:Name="PageWithPurchase" Background="#FF2B2B2B" Height="1000">
-        <TextBlock x:Name="QuestionTextBlock" TextWrapping="Wrap" Text="How much money do you have?" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0"/>
-        <TextBox x:Name="ClientsMoney" TextWrapping="Wrap" Margin="770,80,0,0" Foreground="#FF2B2B2B" Background="#FFE5E3E4" FontFamily="Candara" FontStyle="Normal" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="254"/>
-        <Button x:Name="OKButton" FontFamily="Candara" Content="OK" HorizontalAlignment="Right" Height="91" Width="91" VerticalAlignment="Top" FontSize="40" Foreground="#FFC6AD91" FontWeight="Bold" Margin="0,76,480,0" Click="OKButton_Click"/>
-        <Button x:Name="AddMoneyButton" Content="add money" VerticalAlignment="Top" Height="82" Width="332" FontFamily="Candara" FontSize="30" Foreground="#FF414141" HorizontalAlignment="Right" Margin="0,78,111,0" Click="AddMoneyButton_Click"  FontStyle="Normal" FontWeight="Bold" Padding="8,4,8,5" HorizontalContentAlignment="Left">
+        <TextBlock x:Name="QuestionTextBlock" TextWrapping="Wrap" Text="How much money do you have?" FontSize="35" FontFamily="Candara" Foreground="#FDE3C7A5" FontStyle="Normal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,99,0,0" FontWeight="Bold"/>
+        <TextBox x:Name="ClientsMoney" TextWrapping="Wrap" Margin="621,80,0,0" Foreground="#FF2B2B2B" Background="#FFE5E3E4" FontFamily="Candara" FontStyle="Normal" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="254" TextAlignment="Center" GotFocus="ClientsMoney_GotFocus" Padding="0,6,0,0" />
+        <Button x:Name="RecordButton" FontFamily="Candara" Content="Record" HorizontalAlignment="Left" Height="81" Width="167" VerticalAlignment="Top" FontSize="35" Foreground="#FFC6AD91" FontWeight="Bold" Click="RecordButton_Click" Margin="880,80,0,0"/>
+        <Button x:Name="AddMoneyButton" Content="add money" VerticalAlignment="Top" Height="82" Width="332" FontFamily="Candara" FontSize="30" Foreground="#FF414141" HorizontalAlignment="Left" Click="AddMoneyButton_Click"  FontStyle="Normal" FontWeight="Bold" Padding="8,4,8,5" HorizontalContentAlignment="Left" BorderThickness="0,0,0,0" Margin="1180,80,0,0">
             <Button.Background>
-                <SolidColorBrush Color="#FFF3BF1B" Opacity="0.98"/>
+                <SolidColorBrush Color="#FFE8BB2F" Opacity="0.98"/>
             </Button.Background>
         </Button>
 
-        <!--<TextBlock x:Name="HowMuchMoneyMoneyToAdd" TextWrapping="Wrap" Text="" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible" Width="113" Margin="0,91,55,0"/>-->
-        <TextBox x:Name="HowMuchMoneyToAdd" Text="100" Height="82" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" Width="166" Margin="0,78,111,0" Background="#FFE5E3E4" Foreground="#FF444444" FontSize="50" FontFamily="Candara" TextWrapping="Wrap" Padding="10,7,6,6"/>
+        <TextBox x:Name="HowMuchMoneyToAdd" Text="100" Height="82" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Width="166" Margin="1514,80,0,0" Background="#FFE5E3E4" Foreground="#FF444444" FontSize="50" FontFamily="Candara" TextWrapping="Wrap" Padding="0,6,0,0" />
 
-        <TextBlock x:Name="MoneyAfterUpdate" TextWrapping="Wrap" Text="" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,371,0,0" Visibility="Visible" Width="113"/>
+        <TextBlock x:Name="MoneyAfterUpdate" TextWrapping="Wrap" Text="" FontSize="35" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,220,0,0" Width="113" Height="82"/>
+
+
+
+
+        <Border x:Name="BorderForTextblock" Visibility = "Collapsed" Background="PaleGreen" Opacity=".5" Width="530" Height="82" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,315,0,0">
+            <TextBlock x:Name="AvailableBunsQuantity" TextWrapping="Wrap" Text=" " FontSize="35" FontFamily="Candara" Foreground="#FF4A4A4A" HorizontalAlignment="Center" VerticalAlignment="Top" Width="535" Height="82" TextAlignment="Center" Padding="0,18,0,0"/>
+        </Border>
+
+
+
+
+
+
+
+
+        <TextBlock x:Name="QuestionAboutQuantity" Visibility ="Collapsed" FontFamily="Candara" Text="How many buns do you want to buy?" HorizontalAlignment="Left" Height="82" Width="571" VerticalAlignment="Center" FontSize="35" Foreground="#FFC6AD91" FontWeight="Bold" FontStyle="Normal" Margin="75,0,0,0"/>
+        <TextBox x:Name="BunsQuantityPurchase" Visibility="Collapsed" Text ="1" TextWrapping="Wrap" Foreground="#FF525151" Background="#FFE5E3E4" FontFamily="Candara" FontStyle="Normal" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="156" GotFocus="BunsQuantityPurchase_GotFocus" TextAlignment="Center" UseLayoutRounding="False" Margin="665,439,0,0" Padding="0,6,0,0" BorderThickness="0,0,0,0"/>
+        <Button x:Name="RecordButtonForPurchase" Visibility="Collapsed" FontFamily="Candara" Content="Record" HorizontalAlignment="Left" Height="82" Width="167" VerticalAlignment="Top" FontSize="40" Foreground="#FFC6AD91" FontWeight="Bold" Click="RecordButtonForPurchase_Click" Margin="875,439,0,0"/>
+        <TextBlock x:Name="ClientCheckWithoutSale" TextWrapping="Wrap" Text="" FontSize="30" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Right" VerticalAlignment="Top" Width="355" Height="82" Margin="0,439,103,0" TextAlignment="Center" Padding="10,0,0,0"/>
+        <Button x:Name="CalculateDiscountButton" Visibility="Collapsed" Content="calculate my discount" VerticalAlignment="Top" Height="82" Width="310" FontFamily="Candara" FontSize="30" Foreground="#FF414141" HorizontalAlignment="Right" Margin="0,570,128,0" FontStyle="Normal" Padding="8,4,8,5" HorizontalContentAlignment="Center" FontWeight="Bold" Click="CalculateDiscountButton_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFECBE2F" Opacity="0.98"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="ClientCheckWithSale" TextWrapping="Wrap" Text="" FontSize="30" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Right" VerticalAlignment="Top" Width="355" Height="82" Margin="0,700,103,0" TextAlignment="Center" Padding="10,0,0,0"/>
+
+        <Button x:Name="MakeAPurchaseButton" Visibility="Collapsed" Content="BUY" VerticalAlignment="Bottom" Height="200" Width="300" FontFamily="Candara" FontSize="80" Foreground="#FF232222" HorizontalAlignment="Left" FontStyle="Normal" Padding="8,4,8,5" HorizontalContentAlignment="Center" FontWeight="Bold" BorderThickness="0,0,8,8" BorderBrush="#FF292929" Margin="250,0,0,178" Click="MakeAPurchaseButton_Click">
+            <Button.Background>
+                <SolidColorBrush Color="#FFE6835D" Opacity="0.98"/>
+            </Button.Background>
+        </Button>
 
         <Button x:Name="GoToPageInfoButton" FontFamily="Segoe MDL2 Assets" Content="&#xE730;" HorizontalAlignment="Right" Height="71" Width="71" VerticalAlignment="Bottom" FontSize="50" Foreground="#FFC6AD91" Click="GoToPageInfoButton_Click"  Margin="0,0,50,50"/>
         <Button x:Name="GoToPage4Button" FontFamily="Segoe MDL2 Assets" Content="&#xE730;" HorizontalAlignment="Right" Height="71" Width="71" VerticalAlignment="Bottom" FontSize="50" Foreground="#FFC6AD91"   Margin="0,0,242,39" Click="GoToPage4Button_Click"/>
