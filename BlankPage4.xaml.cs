@@ -29,7 +29,7 @@ namespace juice
 
         private void GoToPageInfoButton_Click(object sender, RoutedEventArgs e)
         {
-            MainPage.PageNavigationQueue.Enqueue(4);
+            BlankPage2.PageNavigationQueue.Enqueue(4);
             Frame.Navigate(typeof(BlankPage2));
         }
     }

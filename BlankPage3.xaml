@@ -12,13 +12,14 @@
         <TextBlock x:Name="QuestionTextBlock" TextWrapping="Wrap" Text="How much money do you have?" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" FontStyle="Italic" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,90,0,0"/>
         <TextBox x:Name="ClientsMoney" TextWrapping="Wrap" Margin="770,80,0,0" Foreground="#FF2B2B2B" Background="#FFE5E3E4" FontFamily="Candara" FontStyle="Normal" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="254"/>
         <Button x:Name="OKButton" FontFamily="Candara" Content="OK" HorizontalAlignment="Right" Height="91" Width="91" VerticalAlignment="Top" FontSize="40" Foreground="#FFC6AD91" FontWeight="Bold" Margin="0,76,480,0" Click="OKButton_Click"/>
-        <Button x:Name="AddMoneyButton" Content="add money" VerticalAlignment="Top" Height="61" Width="191" FontFamily="Candara" FontSize="30" Foreground="#FF414141" HorizontalAlignment="Right" Margin="0,91,218,0" Click="AddMoneyButton_Click"  FontStyle="Normal" FontWeight="Bold">
+        <Button x:Name="AddMoneyButton" Content="add money" VerticalAlignment="Top" Height="82" Width="332" FontFamily="Candara" FontSize="30" Foreground="#FF414141" HorizontalAlignment="Right" Margin="0,78,111,0" Click="AddMoneyButton_Click"  FontStyle="Normal" FontWeight="Bold" Padding="8,4,8,5" HorizontalContentAlignment="Left">
             <Button.Background>
                 <SolidColorBrush Color="#FFF3BF1B" Opacity="0.98"/>
             </Button.Background>
         </Button>
-        
-        <TextBlock x:Name="HowMuchMoneyMoneyToAdd" TextWrapping="Wrap" Text="" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible" Width="113" Margin="0,91,55,0"/>
+
+        <!--<TextBlock x:Name="HowMuchMoneyMoneyToAdd" TextWrapping="Wrap" Text="" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Visible" Width="113" Margin="0,91,55,0"/>-->
+        <TextBox x:Name="HowMuchMoneyToAdd" Text="100" Height="82" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" Width="166" Margin="0,78,111,0" Background="#FFE5E3E4" Foreground="#FF444444" FontSize="50" FontFamily="Candara" TextWrapping="Wrap" Padding="10,7,6,6"/>
 
         <TextBlock x:Name="MoneyAfterUpdate" TextWrapping="Wrap" Text="" FontSize="48" FontFamily="Candara" Foreground="#FDE3C7A5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,371,0,0" Visibility="Visible" Width="113"/>
 

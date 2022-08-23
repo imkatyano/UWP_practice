@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -13,9 +14,13 @@ namespace juice
     /// </summary>
     public sealed partial class BlankPage2 : Page
     {
+        static public Queue<int> PageNavigationQueue;
+
         public BlankPage2()         // написать цену булки
         {
             this.InitializeComponent();
+            PageNavigationQueue = new Queue<int>();
+
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
@@ -45,8 +50,9 @@ namespace juice
             Frame.Navigate(typeof(BlankPage3));
         }
 
-        public async void PageNavigationMethod(int a)
+        public async void PageNavigationMethod(Queue<int> b)
         {
+            int a = b.Dequeue();
             switch (a)
             {
                 case 3:
@@ -65,7 +71,9 @@ namespace juice
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            try { PageNavigationMethod(MainPage.PageNavigationQueue.Dequeue()); }
+            //try { PageNavigationMethod(MainPage.PageNavigationQueue.Dequeue()); }
+            try { PageNavigationMethod(PageNavigationQueue); }
+
             catch (InvalidOperationException)
             {
 

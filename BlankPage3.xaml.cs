@@ -33,62 +33,80 @@ namespace juice
             get { return clientsMoneyInt; }
             set { clientsMoneyInt = value; }
         }
-        
+        MessageDialog messageDialog1 = new MessageDialog("Your wallet can't be empty.", title: "Error");
         public BlankPage3()
         {
             this.InitializeComponent();
         }
 
-        // создана переменная
-        // произведена попытка конвертировать пр нажатии на ОК, в случае успеха - надпись внизу
-        // показывает введённые деньги
+        // создана переменная clientsMoneyInt
+        // > OK > присвоение переменной clientsMoneyInt значения, введённого пользователем (52)
+        //      > вывод в текстбокс MoneyAfterUpdate значения переменной
 
-        // кнопка "добавить деньги" > MoneyAfterUpdate.Text увелич. на 100
+        // > AddMoney > присвоение переменной clientsMoneyInt значения, введённого в поле HowMuchMoneyToAdd
+        // обновление в текстбокс MoneyAfterUpdate
 
-    private async void OKButton_Click(object sender, RoutedEventArgs e)
+        private async void OKButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                clientsMoneyInt = Convert.ToInt32(ClientsMoney.Text);   // присвоение переменной введенного текста
+                clientsMoneyInt = Convert.ToInt32(ClientsMoney.Text);  
 
-                if (clientsMoneyInt <= 0)   // поделить на 0 и на отрицательные значения (сделать два if)
+                if (clientsMoneyInt == 0)  
                 {
-                    MessageDialog messageDialog = new MessageDialog($"Please, add some money, {clientsMoneyInt} is too little");
-
-                    messageDialog.Title = "Error";
-                    messageDialog.Commands.Add(new UICommand("Sorry", null));
-                    await messageDialog.ShowAsync();
-
+                    await messageDialog1.ShowAsync();
                 }
-                else MoneyAfterUpdate.Text = clientsMoneyInt.ToString();     // присвоение полю вывода введённого текста в формате стринг 
+
+                else if (clientsMoneyInt < 0)
+                {
+                    messageDialog1.Content = "Incorrect format :( \nPlease, enter a positive number.";
+                    await messageDialog1.ShowAsync();
+                }
+                else MoneyAfterUpdate.Text = clientsMoneyInt.ToString();  
             }
 
             catch (FormatException)
             {
-                MessageDialog messageDialog = new MessageDialog("Incorrect format :( \nPlease, enter a number.");
-                messageDialog.Title = "Error";
-                messageDialog.Commands.Add(new UICommand("Sorry", null));
-                await messageDialog.ShowAsync();
+                messageDialog1.Content = "Incorrect format :( \nPlease, enter a number.";
+                await messageDialog1.ShowAsync();
             }
             catch (Exception ex)
             {
-                MessageDialog messageDialog = new MessageDialog(ex.Message);
-                messageDialog.Title = "Error";
-                messageDialog.Commands.Add(new UICommand("Sorry", null));
-                await messageDialog.ShowAsync();
+                messageDialog1.Content = ex.Message;
+                await messageDialog1.ShowAsync();
             }     
         }
 
-        private void AddMoneyButton_Click(object sender, RoutedEventArgs e)
+        private async void AddMoneyButton_Click(object sender, RoutedEventArgs e)
         {
-                clientsMoneyInt += Convert.ToInt32(ClientsMoney.Text);
-                MoneyAfterUpdate.Text = clientsMoneyInt.ToString();
+            try
+            {
+                clientsMoneyInt += Convert.ToInt32(HowMuchMoneyToAdd.Text);
+
+                if (Convert.ToInt32(HowMuchMoneyToAdd.Text) < 0)
+                {
+                    messageDialog1.Content = "Incorrect format :( \nPlease, enter a positive number.";
+                    await messageDialog1.ShowAsync();
+                }
+                else MoneyAfterUpdate.Text = clientsMoneyInt.ToString();   
                 clientsMoneyInt = Convert.ToInt32(MoneyAfterUpdate.Text);
+            }
+
+            catch (FormatException)
+            {
+                messageDialog1.Content = "Incorrect format :( \nPlease, enter a number";
+                await messageDialog1.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                messageDialog1.Content = ex.Message;
+                await messageDialog1.ShowAsync();
+            }
         }
 
         private void GoToPageInfoButton_Click(object sender, RoutedEventArgs e)
         {
-            MainPage.PageNavigationQueue.Enqueue(3);
+            BlankPage2.PageNavigationQueue.Enqueue(3);
             Frame.Navigate(typeof(BlankPage2));
         }
 
